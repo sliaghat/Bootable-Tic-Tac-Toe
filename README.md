@@ -2,18 +2,9 @@
 
 This repository contains a **bootable** version of the traditional tic-tac-toe game, fully implemented in x86 assembly (NASM). The game runs directly on bare metal, without the need for an operating system. This game also features an **unbeatable AI** that uses the minimax algorithm, which means that the computer will never lose (it will either win or draw).
 
-## Features
-
-- **Bootable** – boots using GRUB (Multiboot compliant) and runs in 32‑bit protected mode.
-- **VGA Text Mode** – uses memory‑mapped I/O to display the board and messages.
-- **PS/2 Keyboard Polling** – reads user input directly from the keyboard controller.
-- **Unbeatable AI** – implements the minimax algorithm with depth‑based scoring to always make the best move.
-- **Player Choice** – allows you to play as either **X** or **O**.
-- **Rematch Option** – after a game, gives you the option to play again or quit.
-
 ## How It Works
 
-The program is a small kernel that takes control of the screen and keyboard. It shows a colorful introduction, allows you to choose your symbol, and then enters the main game loop. The AI analyzes all possible future board states using the minimax algorithm, ensuring that the computer will never lose. All I/O operations are performed by writing directly to the VGA framebuffer at (`0xB8000`) and polling the keyboard’s data port at (`0x60`).
+This program is a small kernel that takes control of the screen and keyboard. It shows an introduction which allows you to choose your symbol, and then enters you into the main game loop. The implemented AI analyzes all possible future board states using the minimax algorithm and ensures that the computer will never lose. All I/O operations are performed by writing directly to the VGA framebuffer at (`0xB8000`) and polling the keyboard’s data port at (`0x60`).
 
 ## Acknowledgements
 The boot configuration is based on http://wiki.osdev.org/Bare_Bones.
