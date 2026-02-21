@@ -15,6 +15,9 @@ This repository contains a **bootable** version of the classic Tic‑Tac‑Toe g
 
 The program is a small kernel that takes control of the screen and keyboard. It shows a colorful introduction, allows you to choose your symbol, and then enters the main game loop. The AI analyzes all possible future board states using the minimax algorithm, ensuring that the computer will never lose. All I/O operations are performed by writing directly to the VGA framebuffer at (`0xB8000`) and polling the keyboard’s data port at (`0x60`).
 
+## Acknowledgements
+The boot configuration is based on http://wiki.osdev.org/Bare_Bones.
+
 ## Requirements
 
 To build and test the project, you need:
